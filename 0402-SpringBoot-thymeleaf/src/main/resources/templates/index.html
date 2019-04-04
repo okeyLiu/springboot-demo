@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Thymeleaf声明 -->
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title>测试页面-index.html</title>
+		<link th:href="@{css/style.css}" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			/* @import url("style.css"); */
+			td{text-align: center;}
+		</style>
+	</head>
+	<body>	
+		<table align="center" width="600" border="1" cellpadding="10" cellspacing="0">
+			<tr>
+				<th>编号</th>
+				<th>名字</th>
+				<th>邮箱</th>
+			</tr>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.id}">1001</td>
+				<td th:text="${user.name}">张飞</td>
+				<td th:text="${user.email}">zhangfei@feifan.com</td>
+			</tr>
+		</table>
+	</body>
+</html>
